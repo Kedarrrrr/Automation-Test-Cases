@@ -15,16 +15,28 @@ public class Table_Ops {
 		
 		driver.get("https://testautomationpractice.blogspot.com/");
 		
-		/*List<WebElement> row_data=driver.findElements(By.xpath(""));
+		List<WebElement> row_data=driver.findElements(By.xpath("//table[@name='BookTable']//tbody//tr"));
 		int rows= row_data.size();
 		
-		List<WebElement> col_data= driver.findElements(By.xpath(""));
+		List<WebElement> col_data= driver.findElements(By.xpath("//table[@name='BookTable']//tbody//tr[1]//th"));
 		int col=col_data.size();
-		*/
+		
 		
 		WebElement x =driver.findElement(By.xpath("//table[@name='BookTable']//tbody//tr[2]//td[1]"));
 		String name= x.getText();
-		System.out.println(name);
+		System.out.println(rows);
+		System.out.println(col);
+		
+		System.out.println("BookName\t Author\t Subject\t Price");
+		
+		for(int r=2; r<=rows; r++) {
+			for(int c=1; c<=col;c++) {
+				String content=driver.findElement(By.xpath("//table[@name='BookTable']//tbody//tr["+r+"]//td["+c+"]")).getTagName();
+				
+				System.out.print(content);
+			}
+			System.out.println();
+		}
 		
 		
 	}

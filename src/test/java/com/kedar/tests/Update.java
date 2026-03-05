@@ -10,8 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Broken_Linkes {
-
+public class Update {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		WebDriver driver = new ChromeDriver();
@@ -41,6 +40,4 @@ public class Broken_Linkes {
 			}
 			
 		}
-	}
-
 }
